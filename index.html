@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CUI Tsz Wai, David — Personal Website</title>
+  <title>CUI Tsz Wai, David — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Scroll progress bar -->
   <div class="scroll-progress"></div>
 
+  <!-- Particle canvas -->
+  <canvas id="particle-canvas"></canvas>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">David Cui</a>
+      <a href="#hero" class="nav-logo">DC</a>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
@@ -29,42 +35,72 @@
 
   <!-- Hero -->
   <header id="hero" class="hero">
-    <div class="hero-pattern"></div>
+    <div class="hero-glow hero-glow--left"></div>
+    <div class="hero-glow hero-glow--right"></div>
     <div class="hero-content">
-      <h1>CUI Tsz Wai, David</h1>
-      <p class="hero-subtitle">Data &amp; Systems Engineering Student</p>
+      <p class="hero-greeting">こんにちは！Hello World</p>
+      <h1>CUI Tsz Wai<span class="hero-comma">,</span> David</h1>
+      <p class="hero-subtitle">Data &amp; Systems Engineering</p>
       <p class="hero-tagline">Bridging data science, systems thinking, and real-world problem solving.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
+      </div>
     </div>
   </header>
+
+  <!-- Speed-line divider -->
+  <div class="speed-divider"></div>
 
   <!-- About -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I am a second-year undergraduate in Data and Systems Engineering at City University of Hong Kong,
-        passionate about using data-driven methods to understand complex systems — from public health
-        to international relations. My academic training spans optimization, statistics, machine learning,
-        and programming, with hands-on experience building tools that serve real communities.
-      </p>
-      <p>
-        Outside the classroom, I enjoy playing the violin, competing in table tennis, and tinkering with
-        bots and automation. I am currently seeking internship opportunities where I can apply my analytical
-        and technical skills.
-      </p>
+      <h2 class="section-title"><span class="title-deco">◆</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a second-year undergraduate in Data and Systems Engineering at City University of Hong Kong,
+            passionate about using data-driven methods to understand complex systems — from public health
+            to international relations. My academic training spans optimization, statistics, machine learning,
+            and programming, with hands-on experience building tools that serve real communities.
+          </p>
+          <p>
+            Outside the classroom, I enjoy playing the violin, competing in table tennis, and tinkering with
+            bots and automation. I am currently seeking internship opportunities where I can apply my analytical
+            and technical skills.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Years Coding</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">300+</span>
+            <span class="stat-label">Bot Users</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">12</span>
+            <span class="stat-label">STM Topics</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Speed-line divider (flipped) -->
+  <div class="speed-divider speed-divider--flip"></div>
 
   <!-- Education -->
   <section id="education" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title"><span class="title-deco">◆</span> Education</h2>
       <div class="edu-card">
         <div class="edu-header">
           <h3>City University of Hong Kong (CityUHK)</h3>
-          <span class="edu-date">Sep 2024 – Jun 2028 (expected)</span>
+          <span class="edu-date">2024 – 2028</span>
         </div>
-        <p class="edu-degree">Bachelor of Science in Data and Systems Engineering (BSc DSE)</p>
+        <p class="edu-degree">Bachelor of Science in Data and Systems Engineering</p>
         <p class="edu-gpa">SGPA: 3.02</p>
         <div class="coursework">
           <h4>Relevant Coursework</h4>
@@ -73,87 +109,101 @@
             <li>Operations Research</li>
             <li>Python for Data Science</li>
             <li>Data Visualization</li>
-            <li>Introduction to Computer Programming (C++)</li>
-            <li>Smart City — A Systems Engineering Perspective</li>
+            <li>Intro to Computer Programming (C++)</li>
+            <li>Smart City Systems</li>
             <li>Calculus &amp; Multi-variable Calculus</li>
             <li>Linear Algebra with Applications</li>
             <li>Probability and Statistics</li>
-            <li>Statistical Methods and Data Analysis</li>
+            <li>Statistical Methods &amp; Data Analysis</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Speed-line divider -->
+  <div class="speed-divider"></div>
+
   <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title"><span class="title-deco">◆</span> Projects</h2>
       <div class="project-grid">
 
         <!-- Project 1: STM Research -->
         <div class="project-card">
+          <div class="project-number">01</div>
           <div class="project-tags">
-            <span>R</span><span>NLP</span><span>Academic Research</span>
+            <span>R</span><span>NLP</span><span>Academic</span>
           </div>
-          <h3>"Hot Economics and Cold Politics" — STM Analysis of China's Rhetoric toward Japan</h3>
+          <h3>"Hot Economics and Cold Politics"</h3>
           <p class="project-meta">GE3206 China in World Affairs · Group Research Paper</p>
           <p>
-            Applied Structural Topic Modeling (STM) to a corpus of 502 Chinese official texts (2014–2026)
-            from <em>People's Daily</em>, Ministry of Foreign Affairs briefings, and Xinhua reports.
-            Identified 12 latent topics — from Abenomics to Fukushima — and estimated topic prevalence
-            trends over time to test hypotheses about economic pragmatism vs. security-driven nationalism
-            in China's Japan discourse. Implemented full pipeline in R (jiebaR, quanteda, stm, ggplot2).
+            Structural Topic Modeling of 502 Chinese official texts (2014–2026) from
+            <em>People's Daily</em>, MFA briefings, and Xinhua reports. Identified 12 latent topics —
+            from Abenomics to Fukushima — tracking China's evolving rhetoric toward Japan.
           </p>
-          <a href="https://github.com/DavidCui23333/STM-model-for-China-Japan-relations" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
+          <a href="https://github.com/DavidCui23333/STM-model-for-China-Japan-relations" target="_blank" rel="noopener" class="project-link">
+            <span>View Repository</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
         <!-- Project 2: Diabetes Data Analysis -->
         <div class="project-card">
+          <div class="project-number">02</div>
           <div class="project-tags">
             <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>ML</span>
           </div>
           <h3>Diabetes Data Analysis</h3>
           <p>
-            Conducted exploratory data analysis on a diabetes-related dataset to identify key health
-            indicators. Performed data cleaning, feature correlation analysis, and visualization to
-            uncover patterns across patient groups. Built and evaluated binary/multiclass classification
-            and regression models for diabetes risk and stage prediction, achieving interpretable results.
+            EDA on diabetes health indicators with data cleaning, correlation analysis, and
+            visualizations. Built and evaluated binary/multiclass classification and regression
+            models for diabetes risk and stage prediction with interpretable results.
           </p>
-          <a href="https://github.com/DavidCui23333" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
+          <a href="https://github.com/DavidCui23333" target="_blank" rel="noopener" class="project-link">
+            <span>View Repository</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
         <!-- Project 3: QQ Bot -->
         <div class="project-card">
+          <div class="project-number">03</div>
           <div class="project-tags">
             <span>Python</span><span>HTML</span><span>Automation</span>
           </div>
           <h3>QQ Bot — Community Automation</h3>
           <p>
-            Developed and maintained a QQ bot based on open-source frameworks (NoneBot, AstrBot)
-            serving a community of ~300 users for over one year. Implemented automated replies,
-            weather queries, group management tools, and game API integrations (Project Sekai,
-            Genshin Impact). Built a companion website with HTML. Managed deployment, uptime
-            monitoring, and version updates with regular user feedback integration.
+            Developed a bot serving ~300 users with automated replies, weather queries, group
+            management, and game API integrations (Project Sekai, Genshin Impact). Built a companion
+            website and maintained 24/7 uptime with regular feature updates based on user feedback.
           </p>
+          <a href="https://github.com/DavidCui23333" target="_blank" rel="noopener" class="project-link">
+            <span>View Repository</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Speed-line divider (flipped) -->
+  <div class="speed-divider speed-divider--flip"></div>
+
   <!-- Skills -->
   <section id="skills" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Skills &amp; Interests</h2>
+      <h2 class="section-title"><span class="title-deco">◆</span> Skills &amp; Interests</h2>
       <div class="skills-grid">
 
         <div class="skill-group">
-          <h3>Programming Languages</h3>
+          <h3>Programming</h3>
           <ul class="skill-list">
             <li>Python</li>
             <li>C++</li>
-            <li>HTML</li>
+            <li>HTML/CSS</li>
             <li>R</li>
           </ul>
         </div>
@@ -163,8 +213,8 @@
           <ul class="skill-list">
             <li>SQL</li>
             <li>Tableau</li>
-            <li>Excel (Pivot Tables, VLOOKUP)</li>
-            <li>Machine Learning Basics</li>
+            <li>Excel</li>
+            <li>Machine Learning</li>
             <li>A/B Testing</li>
           </ul>
         </div>
@@ -176,7 +226,7 @@
             <li>Jupyter Notebook</li>
             <li>AI Agent</li>
             <li>Unity (Basic)</li>
-            <li>Microsoft Office Suite</li>
+            <li>MS Office Suite</li>
             <li>Video Editing</li>
           </ul>
         </div>
@@ -194,37 +244,56 @@
 
       <div class="interests">
         <h3>Interests</h3>
-        <p>Violin · Table Tennis</p>
+        <div class="interest-tags">
+          <span class="interest-tag">🎻 Violin</span>
+          <span class="interest-tag">🏓 Table Tennis</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Speed-line divider -->
+  <div class="speed-divider"></div>
+
   <!-- Contact -->
   <section id="contact" class="section">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-info">
-        <div class="contact-item">
+      <h2 class="section-title"><span class="title-deco">◆</span> Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </div>
           <span class="contact-label">Email</span>
           <a href="mailto:huanyuans10@gmail.com">huanyuans10@gmail.com</a>
         </div>
-        <div class="contact-item">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
           <span class="contact-label">Phone</span>
           <span>53055379</span>
         </div>
-        <div class="contact-item">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </div>
           <span class="contact-label">GitHub</span>
-          <a href="https://github.com/DavidCui23333" target="_blank" rel="noopener">github.com/DavidCui23333</a>
+          <a href="https://github.com/DavidCui23333" target="_blank" rel="noopener">DavidCui23333</a>
         </div>
       </div>
-      <p class="availability">Available immediately (May 12 – Aug 31, 2026)</p>
+      <div class="availability-bar">
+        <span class="pulse-dot"></span>
+        Available for internship — May 12 to Aug 31, 2026
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
+    <div class="footer-pattern"></div>
     <div class="container">
-      <p>&copy; 2026 CUI Tsz Wai, David. All rights reserved.</p>
+      <p class="footer-text">© 2026 CUI Tsz Wai, David — Built with <span class="footer-heart">♥</span> and lots of caffeine</p>
     </div>
   </footer>
 
