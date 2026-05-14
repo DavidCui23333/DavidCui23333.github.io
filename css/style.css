@@ -289,11 +289,6 @@ a:hover {
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-/* Floating scroll indicator */
-.hero::after {
-  /* already defined above, this rule is complete — the scroll indicator goes in .hero-content */
-}
-
 .hero-content::after {
   content: '';
   display: block;
